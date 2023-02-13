@@ -12,6 +12,8 @@ export default function App() {
   ]);
 
   const [palavraSecreta, setPalavraSecreta] = useState('');
+  const [palavraOculta, setPalavraOculta] = useState('');
+
 
   function verificaPalavra() {
 
@@ -19,13 +21,15 @@ export default function App() {
 
   function montaPalavra() {
 
+    setPalavraSecreta(palavra[Math.floor(Math.random() * palavra.length)])
+
   }
 
   return (
     <SafeAreaView style={styles.container}>
       <Text style={{ fontSize: 30, color: '#4169E1' }}>Jogo da Forca</Text>
       <Text>
-        {palavra[Math.floor(Math.random() * palavra.length)]}
+        {montaPalavra()}
       </Text>
       <StatusBar style="auto" />
     </SafeAreaView>
