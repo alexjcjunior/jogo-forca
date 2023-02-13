@@ -1,12 +1,34 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { useState } from 'react';
+import { SafeAreaView, StyleSheet, Text, View } from 'react-native';
+
 
 export default function App() {
+
+  const [palavra, setPalavra] = useState([
+    "raquete",
+    "segurança",
+    "sol"
+  ]);
+
+  const [palavraSecreta, setPalavraSecreta] = useState('');
+
+  function verificaPalavra() {
+
+  };
+
+  function montaPalavra() {
+
+  }
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+    <SafeAreaView style={styles.container}>
+      <Text style={{ fontSize: 30, color: '#4169E1' }}>Jogo da Forca</Text>
+      <Text>
+        {palavra[Math.floor(Math.random() * palavra.length)]}
+      </Text>
       <StatusBar style="auto" />
-    </View>
+    </SafeAreaView>
   );
 }
 
@@ -15,6 +37,6 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'flex-start',
   },
 });
